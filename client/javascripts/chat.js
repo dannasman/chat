@@ -36,16 +36,28 @@ getMessageBox = function () {
             $.post("messages", messageObject);
         }
     })
+    $("#send").keyup(function(event)    {
+        if(event.keyCode === 13)    {
+            $("#sendButton").click();
+        }
+    })
 
 }
 
 checkUser = function ()   {
     $("#nicknameButton").click(function () {
-        name = $("#nickname").val()
+        name = $("#nickname").val();
         if (name !== "") {
             document.location = "http://localhost:3000/index2.html";
         }
     });
+
+    $("#nickname").keyup(function(event)    {
+        if(event.keyCode === 13)    {
+            $("#nicknameButton").click();
+        }
+    })
+
     if(name !== "") {
         getMessageBox();
         setInterval(function()   {
