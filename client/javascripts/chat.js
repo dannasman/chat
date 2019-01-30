@@ -12,8 +12,8 @@ getMessages = function () {
         var allMessages = foundMessages.map(function (foundMessage) {
             return [foundMessage.nickName, foundMessage.message];
         });
-        recentMessages = allMessages.slice(allMessages.length - 10, allMessages.length);
-        recentMessages.forEach(function (content) {
+        recentMessages = allMessages.slice(allMessages.length - 50, allMessages.length);
+        recentMessages.slice().reverse().forEach(function (content) {
             var feed = content[0] + ": " + content[1];
             if(content[0] === name) {
                 $("#messages").append("<div id='ownMessage'>" + feed);
@@ -34,6 +34,7 @@ getMessageBox = function () {
         if (newMessage !== "") {
             messageObject = { "nickName": name, "message": newMessage };
             $.post("messages", messageObject);
+            $("#send").val("");
         }
     })
     $("#send").keyup(function(event)    {
@@ -48,7 +49,7 @@ checkUser = function ()   {
     $("#nicknameButton").click(function () {
         name = $("#nickname").val();
         if (name !== "") {
-            document.location = "http://192.168.1.78:3000/index2.html";
+            document.location = "http://localhost:3000/index2.html"; // http://192.168.1.78:3000/index2.html
         }
     });
 

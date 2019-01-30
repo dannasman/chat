@@ -6,11 +6,18 @@
     width: 25%;
     
 }
+#messages   {
+    overflow: scroll;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%; 
+    height: 500px;
+}
 #ownMessage {
     background-color: rgb(119, 172, 253);
     text-align: right;
     position: relative;
-    left: 475px;
+    left: 73%;
 }
 #othersMessage  {
     background-color: #f1f1f1;
@@ -20,8 +27,8 @@
     border: 2px solid #dedede;
     padding: 10px;
     margin: 10px 0;
-    width: 45%;
-    height: 10px;
+    width: 90%;
+    height: 30%;
     float: left;
 }
 #sendButton, #nicknameButton {
@@ -29,6 +36,6 @@
     border: 2px solid #dedede;
     float: left;
     width: 5%;
-    margin: -8.5px 0;
-    padding: 7.5px;
+    margin: -9.25px 0;
+    padding: 11px;
 }
