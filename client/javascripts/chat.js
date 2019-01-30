@@ -48,7 +48,7 @@ checkUser = function ()   {
     $("#nicknameButton").click(function () {
         name = $("#nickname").val();
         if (name !== "") {
-            document.location = "http://localhost:3000/index2.html";
+            document.location = "http://192.168.1.78:3000/index2.html";
         }
     });
 
